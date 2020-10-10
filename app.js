@@ -13,12 +13,18 @@ mongoose
   .catch((e) => console.log(e));
 
 app.get("/", (req, res) => {
-  res.send("ay");
+  res.send("");
+});
+
+app.get("/events", (req, res) => {
+  Event.find()
+    .then((r) => {
+      res.send(r);
+    })
+    .catch((e) => console.log(e));
 });
 
 app.get("/events/new", (req, res) => {
-  const event = new Event({
-    eventTime: Date.now(),
-    severity: 1,
-  });
+  res.send("new events page");
+  console.log(req, res);
 });
