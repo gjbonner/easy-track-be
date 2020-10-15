@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const eventSchema = new Schema(
   {
+    user: {
+      type: String,
+      required: true,
+    },
     eventTime: {
       type: Date,
       required: true,
